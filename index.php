@@ -47,6 +47,8 @@
 		h3{
 			font-weight: bold;
 			font-size: 1.7em;
+			padding-top: 0;
+			margin-top: 0;
 		}
 
 		p{
@@ -67,11 +69,22 @@
 			border: 1px solid #CFCFCF;
 		}
 
+		.item p{
+				margin-top: 0.6em;	
+		}
+
 
 		.item img{
 			display: block;
 			margin: 0 auto;
 		}
+
+		.item img.icon{
+			display: inline-block;
+			float: left;
+			max-width: 10%;
+			padding-right: 0.5em;
+			}
 
 	</style>
 
@@ -106,6 +119,7 @@ function parse_rss($feed){
         $desc= $item->description;
 
         $stuff.= '<div class="item">';
+        $stuff.= '<img src="img/rss.png" alt="RSS Icon" class="icon" />';
       	$stuff.= '<h3><a href="'. $link .'">'. $title .'</a></h3>';
       	$stuff.= '<p>'.$desc.'</p>';
       	$stuff.= '</div>';
@@ -129,6 +143,7 @@ function parse_twitter($feed){
         $desc= $item->summary;
 
         $stuff.= '<div class="item">';
+        $stuff.= '<img src="img/tw.png" alt="Twitter Icon" class="icon" />';
       	$stuff.= $title;
       	$stuff.= '<p>'.$desc.' <a href='. $link .'>link</a></p>';
       	$stuff.= '</div>';
@@ -179,6 +194,7 @@ function fb_parse_feed( $feed, $no = 10 ) {
         $desc= $item->description;
 
         $out.= '<div class="item">';
+        $out.= '<img src="img/fb.png" alt="Facebook Icon" class="icon" />';
       	$out.= '<h3><a href="'. $link .'">'. $title .'</a></h3>';
       	$out.= '<p>'.$desc.'</p>';
       	$out.= '</div>';
