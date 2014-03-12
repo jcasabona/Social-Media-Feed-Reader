@@ -55,6 +55,13 @@
 			font-size: 1.65em;	
 		}
 
+
+		iframe{
+			margin-top: 1em;
+			height: 100%;
+			width: 99%;
+			}
+
 		@media screen and (min-width: 50em){
 			.column{
 				width: 32%; 
@@ -227,8 +234,9 @@ $fb_feed= 'http://www.facebook.com/feeds/page.php?id='.$fbid.'&format=rss20';
 
 print_column(parse_rss(DEFAULT_FEED)); 
 print_column(fb_parse_feed($fb_feed));
-print_column(parse_twitter('http://www.rssitfor.me/getrss?name=jcasabona'));
-
+//print_column(parse_twitter('http://www.rssitfor.me/getrss?name=jcasabona'));
+print_column('<a class="twitter-timeline" href="https://twitter.com/univofscranton" data-widget-id="443752368245452800">Tweets by @univofscranton</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>');
 ?>
 </div>
 </body>
